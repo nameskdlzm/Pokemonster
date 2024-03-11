@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1066325234364",
+    "project_id": "pokemon-ac254",
+    "storage_bucket": "pokemon-ac254.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066325234364:android:1f0acab4f172e1417736b9",
+        "android_client_info": {
+          "package_name": "com.mrhi2024.pokemon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkDvavfhRsrDJ3n8ehliBJBhuZWE_Xhyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
