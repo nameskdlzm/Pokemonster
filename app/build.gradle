@@ -61,5 +61,5 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     // 포켓몬
-    implementation 'me.sargunvohra.lib:pokekotlin:<VERSION>'
+//    implementation 'me.sargunvohra.lib:pokekotlin:<VERSION>'
 }
