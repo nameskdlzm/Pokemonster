@@ -1,4 +1,4 @@
-data class PokemonData(var Pokemon: String)
+data class PokemonData(var document: List<Type>)
 
 
 data class Type(

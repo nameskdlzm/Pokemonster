@@ -1,5 +1,10 @@
 package com.mrhi2024.pokemonster.Fragment
 
+import NamedAPIResource
+import PokemonAbility
+import PokemonData
+import Type
+import VersionEncounterDetail
 import android.app.Activity
 import android.graphics.drawable.shapes.Shape
 import android.os.Bundle
@@ -31,25 +36,8 @@ class PokemonFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        loadData()
-    }
-
-    private fun loadData() {
-
-        val db = requireContext().openOrCreateDatabase("Pokemon", Activity.MODE_PRIVATE, null)
-
-        val shape = db.rawQuery("SELECT * FROM favor", null)
-
-        shape?.apply {
-            moveToFirst()
-
-            val PokemonActivity: MutableList<Shape> = mutableListOf()
-
-            moveToNext()
-
-
-        }
 
     }
+
 
 }
