@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.mrhi2024.pokemon.databinding.FragmentPokemonBinding
 
 
-class PokemonFragment: Fragment() {
+class PokemonFragment : Fragment() {
 
     private val binding by lazy { FragmentPokemonBinding.inflate(layoutInflater) }
 
@@ -34,17 +34,18 @@ class PokemonFragment: Fragment() {
         loadData()
     }
 
-    private fun loadData(){
+    private fun loadData() {
 
-        val db =requireContext().openOrCreateDatabase("PokemonShape", Activity.MODE_PRIVATE,null)
+        val db = requireContext().openOrCreateDatabase("Pokemon", Activity.MODE_PRIVATE, null)
 
-        val shape = db.rawQuery("SELECT * FROM favor",null)
+        val shape = db.rawQuery("SELECT * FROM favor", null)
 
         shape?.apply {
             moveToFirst()
 
-            val ShapeList:MutableList<Shape> = mutableListOf()
+            val PokemonActivity: MutableList<Shape> = mutableListOf()
 
+            moveToNext()
 
 
         }
