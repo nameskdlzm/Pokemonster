@@ -57,4 +57,9 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:32.7.3')
     implementation 'com.google.firebase:firebase-firestore-ktx'
     implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // 포켓몬
+    implementation 'me.sargunvohra.lib:pokekotlin:<VERSION>'
 }

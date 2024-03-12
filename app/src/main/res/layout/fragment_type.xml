@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+   <ImageView
+       android:id="@+id/type_Fire"
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:src="@drawable/btn_type"
+       android:padding="8dp"
+       android:layout_marginLeft="20dp"
+       android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/type_Bug"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignStart="@id/type_Fire"
+        />
+
+    <ImageView
+        android:id="@+id/Dark"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:id="@+id/Dragon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/type_Fire"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/Electric"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@id/type_Bug"
+        android:layout_below="@id/type_Bug"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/black"
+        android:src="@drawable/btn_type"/>
+
+    <ImageView
+        android:id="@+id/Falry"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Dark"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:id="@+id/Fighting"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/Dragon"/>
+
+    <ImageView
+        android:id="@+id/Flying"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@id/type_Bug"
+        android:layout_below="@id/Electric"/>
+
+    <ImageView
+        android:id="@+id/Ghost"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/Falry"/>
+
+    <ImageView
+        android:id="@+id/Grass"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/Fighting"/>
+
+    <ImageView
+        android:id="@+id/Ground"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@id/type_Bug"
+        android:layout_below="@id/Flying" />
+
+    <ImageView
+        android:id="@+id/Ice"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_below="@id/Ghost"/>
+
+    <ImageView
+        android:id="@+id/Normal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/Grass"/>
+
+    <ImageView
+        android:id="@+id/Poison"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@id/Psychic"
+        android:layout_below="@id/Psychic"/>
+
+    <ImageView
+        android:id="@+id/Psychic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@id/Ground"
+        android:layout_below="@id/Ground"/>
+
+    <ImageView
+        android:id="@+id/Steel"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/Ice"
+        android:layout_marginRight="20dp"/>
+
+    <ImageView
+        android:id="@+id/Water"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/btn_type"
+        android:padding="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/Normal"/>
+
+ <ImageView
+     android:id="@+id/Rock"
+     android:layout_width="100dp"
+     android:layout_height="100dp"
+     android:src="@drawable/btn_type"
+     android:padding="8dp"
+     android:layout_marginLeft="20dp"
+     android:layout_marginTop="20dp"
+     android:layout_alignParentRight="true"
+     android:layout_below="@id/Steel"
+     android:layout_marginRight="20dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
