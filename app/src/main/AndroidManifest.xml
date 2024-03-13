@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.mrhi2024.pokemonster.Fragment.ShapeFragment"
+            android:name="com.mrhi2024.pokemon.Activities.MainActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.SignupActivity"
@@ -36,6 +36,11 @@
         <activity
             android:name=".Activities.MainActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.kakao.vectormap.APP_KEY"
+            android:value="692c65c843eca07476b0cc42d3e93152"/>
+
     </application>
 
 </manifest>
