@@ -1,7 +1,4 @@
-data class PokemonData(var document: List<Type>)
-
-
-data class Type(
+data class PokemonData(
     var id: Int,
     var name: String,
     var base_experience: Int,
@@ -21,7 +18,6 @@ data class Type(
     var species: NamedAPIResource,
     var stats: List<PokemonStat>,
     var types: List<PokemonType>
-
 )
 
 data class PokemonAbility(

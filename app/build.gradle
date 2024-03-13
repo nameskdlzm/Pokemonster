@@ -62,4 +62,5 @@ dependencies {
 
     // 포켓몬
 //    implementation 'me.sargunvohra.lib:pokekotlin:<VERSION>'
+    implementation 'com.kakao.maps.open:android:2.9.2'
 }

@@ -1,16 +1,24 @@
 package com.mrhi2024.pokemon.Activities
 
 import PokemonData
+import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.google.gson.Gson
 import com.mrhi2024.pokemon.R
 import com.mrhi2024.pokemon.databinding.ActivityMainBinding
 import com.mrhi2024.pokemonster.Fragment.PokemonFragment
 import com.mrhi2024.pokemonster.Fragment.PokemonMapFragment
 import com.mrhi2024.pokemonster.Fragment.PokemonTypeFragment
+import com.mrhi2024.pokemonster.Network.RetrofitService
 import com.mrhi2024.tpsearchplacebykakao.network.RetrofitHelper
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.create
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -23,6 +31,12 @@ class MainActivity : AppCompatActivity() {
 
     var pokemon:PokemonData? =null
 
+    // 포켓몬 이름
+    var pokemonmain:PokemonData? =null
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -34,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
 
                 R.id.menu_bnv_map -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment,PokemonFragment()).commit()
-//                R.id.menu_bnv_search -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment,PokemonMapFragment()).commit()
+                R.id.menu_bnv_search -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment,PokemonMapFragment()).commit()
                 R.id.menu_bnv_type -> supportFragmentManager.beginTransaction().replace(R.id.container_fragment,PokemonTypeFragment()).commit()
 
             }
@@ -43,25 +57,30 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        Pokemon()
+
     }
 
     private fun Pokemon(){
+//        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show()
 
-        val inputStream = assets.open("https://pokeapi.co/api/v2/pokemon/")
-        val inputStreamReader =InputStreamReader(inputStream)
-        val reader = BufferedReader(inputStreamReader)
+        val retrofit = RetrofitHelper.getRetrofitInstance("https://pokeapi.co")
+        val retrofitSevice = retrofit.create(RetrofitService::class.java)
+        val call = retrofitSevice.PokemonSearch("clefairy")
+        call.enqueue(object :Callback<PokemonData>{
+            override fun onResponse(call: Call<PokemonData>, response: Response<PokemonData>) {
+                val s = response.body()
+                val name = s?.id
+//                Pokemonname = response.body()
+                AlertDialog.Builder(this@MainActivity).setMessage("$s").create().show()
 
-        val builder =StringBuilder()
-        while (true){
-            val line =reader.readLine() ?: break
-            builder.append(line+"\n")
+            }
 
-        }
-        val jsonString = builder.toString()
+            override fun onFailure(call: Call<PokemonData>, t: Throwable) {
+                Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
 
-        val gson = Gson()
-        var pokemon:PokemonData = gson.fromJson(jsonString,pokemon!!::class.java)
-//        binding.containerFragment = jsonString
+        })
 
 
 
