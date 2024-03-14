@@ -34,6 +34,7 @@ class PokemonFragment : Fragment() {
         val ma:MainActivity =activity as MainActivity
         ma.pokemonmain ?: return
 //        binding.recyclerView.adapter = PokemonDataAdapter
+
     }
 
 
