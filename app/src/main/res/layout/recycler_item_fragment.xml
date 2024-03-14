@@ -19,7 +19,7 @@
             android:id="@+id/iv_cat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/catd" />
+            android:src="@drawable/green" />
 
         <TextView
             android:id="@+id/tv_name"
@@ -27,8 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/iv_cat"
             android:gravity="center"
-            android:text="고양이"
-            android:textSize="24sp"
+            android:text="이상해씨"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
@@ -38,7 +38,7 @@
             android:layout_below="@id/iv_cat"
             android:gravity="center_vertical"
             android:text="No:"
-            android:textSize="24dp" />
+            android:textSize="12dp" />
 
 
     </LinearLayout>

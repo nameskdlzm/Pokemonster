@@ -14,7 +14,8 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="@drawable/baseline_search">
+            app:navigationIcon="@drawable/monsterball"
+            android:background="#FFFF0000">
 
             <EditText
                 android:id="@+id/et_search"

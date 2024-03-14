@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/menu_bnv_map" android:title="지도" android:icon="@drawable/map"/>
+    <item android:id="@+id/menu_bnv_map" android:title="지도" android:icon="@drawable/bnvmap"/>
     <item android:id="@+id/menu_bnv_type" android:title="속성" android:icon="@drawable/ball"/>
     <item android:id="@+id/menu_bnv_search" android:title="더보기" android:icon="@drawable/search"/>
 
