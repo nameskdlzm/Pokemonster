@@ -27,7 +27,9 @@ class PokemonRecycler(val context: Context , val document:List<PokemonData>):Ada
         val Poke:PokemonData =document[position]
 
         holder.binding.tvNum.text =Poke.toString()
-        holder.binding.ivCat
+        holder.binding.ivCat.setImageResource(0)
+
+//        holder.binding.
     }
 
 

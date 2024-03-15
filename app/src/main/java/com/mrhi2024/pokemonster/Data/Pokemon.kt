@@ -1,24 +1,34 @@
+import com.mrhi2024.pokemonster.Data.Ability
+import com.mrhi2024.pokemonster.Data.Name
+
+data class Pokefinal(val count:Int, var next:String, var previous:String, var results: List<NamedAPIResource>)
+//data class Pokefinal(var abilities: List<Ability>,var pogo: List<PokemonData>)
+
+
 data class PokemonData(
+//    var abilities: List<PokemonAbility>,
     var id: Int,
     var name: String,
-    var base_experience: Int,
+//    var base_experience: Int,
     var height: Int,
-    var is_default: Boolean,
+//    var is_default: Boolean,
     var order: Int,
     var weight: Int,
-    var abilities: List<PokemonAbility>,
-    var forms: List<NamedAPIResource>,
-    var game_indices: List<VersionEncounterDetail>,
-    var held_items: List<PokemonHeldItem>,
-    var location_area_encounters: String,
-    var moves: List<PokemonMove>,
-    var past_types: List<PokemonTypePast>,
+//    var forms: List<NamedAPIResource>,
+//    var game_indices: List<VersionEncounterDetail>,
+//    var held_items: List<PokemonHeldItem>,
+//    var location_area_encounters: String,
+//    var moves: List<PokemonMove>,
+//    var past_types: List<PokemonTypePast>,
     var sprites: PokemonSprites,
-    var cries: PokemonCries,
-    var species: NamedAPIResource,
-    var stats: List<PokemonStat>,
-    var types: List<PokemonType>
+//    var cries: PokemonCries,
+//    var species: NamedAPIResource,
+//    var stats: List<PokemonStat>,
+//    var types: List<PokemonType>
 )
+
+
+data class Name(var name:String , var url:String)
 
 data class PokemonAbility(
     var is_hidden: Boolean,
