@@ -26,10 +26,17 @@ class PokemonTypeFragment:Fragment() {
         return binding.root
     }
 
+    //ragment에 속한 View나 ViewGroup에 대한 UI 바인딩 작업을 할 수 있다
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.root.setOnClickListener{
+
+//            binding.
+
+        }
     }
 
+    // 화면이 사용자에게 보여질때
     override fun onResume() {
         super.onResume()
 

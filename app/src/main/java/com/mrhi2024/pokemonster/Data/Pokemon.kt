@@ -1,8 +1,9 @@
 import com.mrhi2024.pokemonster.Data.Ability
 import com.mrhi2024.pokemonster.Data.Name
 
-data class Pokefinal(val count:Int, var next:String, var previous:String, var results: List<NamedAPIResource>)
-//data class Pokefinal(var abilities: List<Ability>,var pogo: List<PokemonData>)
+//data class Pokefinal(val count:Int, var next:String, var previous:String, var results: List<NamedAPIResource>)
+data class Pokefinal(var abilities: List<Ability>,var pogo: List<PokemonData>)
+
 
 
 data class PokemonData(
@@ -24,7 +25,7 @@ data class PokemonData(
 //    var cries: PokemonCries,
 //    var species: NamedAPIResource,
 //    var stats: List<PokemonStat>,
-//    var types: List<PokemonType>
+    var types: List<PokemonType>
 )
 
 
