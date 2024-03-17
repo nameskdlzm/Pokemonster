@@ -7,17 +7,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import com.mrhi2024.pokemon.databinding.RecyclerItemFragmentBinding
 
-class PokemonDataAdapter(val context:Context , val  document:List<PokemonData>):
-    Adapter<PokemonDataAdapter.VH>() {
+class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) : Adapter<PokemonDataAdapter.VH>() {
 
-    inner class VH(val binding:RecyclerItemFragmentBinding): ViewHolder(binding.root)
+    inner class VH(val binding: RecyclerItemFragmentBinding) : ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val layoutInflater:LayoutInflater = LayoutInflater.from(context)
-        val binding = RecyclerItemFragmentBinding.inflate(layoutInflater,parent,false)
+        val layoutInflater: LayoutInflater = LayoutInflater.from(context)
+        val binding = RecyclerItemFragmentBinding.inflate(layoutInflater, parent, false)
         return VH(binding)
     }
 
@@ -26,18 +26,18 @@ class PokemonDataAdapter(val context:Context , val  document:List<PokemonData>):
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        val poke:PokemonData = document[position]
+        val poke: PokemonData = document[position]
 
         holder.binding.tvName.text = poke.name
         holder.binding.tvNum.text = poke.id.toString()
-        holder.binding.ivCat.setImageResource(0)
+        Glide.with(context).load(poke.sprites.back_default).into(holder.binding.ivCat)
 
         holder.binding.root.setOnClickListener {
-            val intent = Intent(context,PokemonData::class.java)
+            val intent = Intent(context, PokemonData::class.java)
 
-            val gson =Gson()
-            val s:String = gson.toJson(poke)
-            intent.putExtra("poke",s)
+            val gson = Gson()
+            val s: String = gson.toJson(poke)
+            intent.putExtra("poke", s)
 
             context.startActivity(intent)
         }

@@ -39,6 +39,26 @@
             android:layout_height="match_parent"
             android:layout_below="@id/toolbar"/>
 
+<!--        <ScrollView-->
+<!--            android:id="@+id/scrollview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical" >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_scroll"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"/>-->
+
+<!--            </LinearLayout>-->
+
+
+<!--        </ScrollView>-->
+
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bnab"
