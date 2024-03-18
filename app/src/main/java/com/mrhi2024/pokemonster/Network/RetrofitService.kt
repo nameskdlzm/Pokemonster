@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface RetrofitService {
 
-    @GET("/api/v2/pokemon")
+    @GET("/pokemongo/pokemon/001.png")
     fun pokemonSearch(@Query("name") name: String): Call<PokemonData>
 
 //    @GET("v2/ability/?limit=20&offset=20")

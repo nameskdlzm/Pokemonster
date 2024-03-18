@@ -11,10 +11,10 @@ data class PokemonData(
     var id: Int,
     var name: String,
 //    var base_experience: Int,
-    var height: Int,
+//    var height: Int,
 //    var is_default: Boolean,
-    var order: Int,
-    var weight: Int,
+//    var order: Int,
+//    var weight: Int,
 //    var forms: List<NamedAPIResource>,
 //    var game_indices: List<VersionEncounterDetail>,
 //    var held_items: List<PokemonHeldItem>,
@@ -23,9 +23,9 @@ data class PokemonData(
 //    var past_types: List<PokemonTypePast>,
     var sprites: PokemonSprites,
 //    var cries: PokemonCries,
-//    var species: NamedAPIResource,
+    var species: NamedAPIResource,
 //    var stats: List<PokemonStat>,
-    var types: List<PokemonType>
+//    var types: List<PokemonType>
 )
 
 

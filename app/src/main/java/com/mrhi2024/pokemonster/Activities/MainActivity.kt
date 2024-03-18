@@ -1,5 +1,4 @@
 package com.mrhi2024.pokemon.Activities
-
 import PokemonData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,7 +22,9 @@ class MainActivity : AppCompatActivity() {
 
     // 포켓몬 프래그먼트
     var pokemonmain: PokemonData? = null
-//    var pokemonmain2: Pokefinal2? = null
+
+    //    var pokemonmain2: Pokefinal2? = null
+    var pokelist: MutableList<PokemonData>? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,33 +65,37 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
     private fun pokemon() {
 //        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show()
         val s = binding.etSearch.text.toString()
 
-        val retrofit = RetrofitHelper.getRetrofitInstance("https://pokeapi.co")
+        val retrofit = RetrofitHelper.getRetrofitInstance("http://www.serebii.net")
         val retrofitSevice = retrofit.create(RetrofitService::class.java)
-        val call = retrofitSevice.pokemonSearch(s)
+        val call = retrofitSevice.pokemonSearch2(s.toInt())
 
-        call.enqueue(object : Callback<PokemonData> {
-            override fun onResponse(call: Call<PokemonData>, response: Response<PokemonData>) {
+//        call.enqueue(object : Callback<PokemonData> {
+//            override fun onResponse(call: Call<PokemonData>, response: Response<PokemonData>) {
 //                for (i in 0..20){
-//                    val pogo = PokemonData(pokemonmain!!.id,pokemonmain!!.name,pokemonmain!!.sprites,pokemonmain!!.species)
+////                    val pogo = PokemonData(pokemonmain!!.id,pokemonmain!!.name,pokemonmain!!.sprites,pokemonmain!!.species)
+////                    pokelist.add(pokemonmain!!.id.toString(0),pokemonmain!!.name,pokemonmain!!.sprites,pokemonmain!!.species).
+//                    response.body()
 //
-//                }
-                pokemonmain = response.body()
-
-                AlertDialog.Builder(this@MainActivity).setMessage("${pokemonmain}").create().show()
-            }
-
-            override fun onFailure(call: Call<PokemonData>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
-            }
-
-        })
-
+//
+////                }
+//                pokemonmain = response.body()
+//
+//                AlertDialog.Builder(this@MainActivity).setMessage("${pokemonmain}").create().show()
+//            }
+//
+//            override fun onFailure(call: Call<PokemonData>, t: Throwable) {
+//                Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+//            }
+//
+//        })
+////
+//        }
+////
+////
     }
-
 
 }
