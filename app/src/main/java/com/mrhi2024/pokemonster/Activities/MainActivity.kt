@@ -1,16 +1,13 @@
 package com.mrhi2024.pokemon.Activities
 
-import Pokefinal
 import PokemonData
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ScrollView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.mrhi2024.pokemon.R
 import com.mrhi2024.pokemon.databinding.ActivityMainBinding
-import com.mrhi2024.pokemonster.Fragment.PokemonFragment
+import com.mrhi2024.pokemonster.Fragment.PokemonListFragment
 import com.mrhi2024.pokemonster.Fragment.PokemonMapFragment
 import com.mrhi2024.pokemonster.Fragment.PokemonTypeFragment
 import com.mrhi2024.pokemonster.Network.RetrofitService
@@ -23,32 +20,35 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-//    private lateinit var binding:ActivityMainBinding
-
 
     // 포켓몬 프래그먼트
     var pokemonmain: PokemonData? = null
+//    var pokemonmain2: Pokefinal2? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        supportFragmentManager.beginTransaction().add(R.id.container_fragment, PokemonFragment())
+        supportFragmentManager.beginTransaction()
+            .add(R.id.container_fragment, PokemonListFragment())
             .commit()
 
         binding.bnv.setOnItemSelectedListener {
 
             when (it.itemId) {
 
-                R.id.menu_bnv_map -> supportFragmentManager.beginTransaction()
-                    .replace(R.id.container_fragment, PokemonFragment()).commit()
+                R.id.menu_bnv_main -> supportFragmentManager.beginTransaction()
+                    .replace(R.id.container_fragment, PokemonListFragment()).commit()
 
-                R.id.menu_bnv_search -> supportFragmentManager.beginTransaction()
+                R.id.menu_bnv_map -> supportFragmentManager.beginTransaction()
                     .replace(R.id.container_fragment, PokemonMapFragment()).commit()
 
                 R.id.menu_bnv_type -> supportFragmentManager.beginTransaction()
                     .replace(R.id.container_fragment, PokemonTypeFragment()).commit()
+
+//                R.id.menu_bnv_favor -> supportFragmentManager.beginTransaction()
+//                    .replace(R.id.container_fragment),PokemonFavorFragment())
 
             }
 
@@ -56,38 +56,32 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        Pokemon()
+        binding.toolbar.setNavigationOnClickListener {
+            pokemon()
+        }
 
 
     }
 
-    private fun Pokemon() {
-        Toast.makeText(this, "aaa"  , Toast.LENGTH_SHORT).show()
+
+
+    private fun pokemon() {
+//        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show()
+        val s = binding.etSearch.text.toString()
 
         val retrofit = RetrofitHelper.getRetrofitInstance("https://pokeapi.co")
         val retrofitSevice = retrofit.create(RetrofitService::class.java)
-//        val call = retrofitSevice.pokemonSearch("Bulbasaur")
-//        val call = retrofitSevice.pokemonSearch2(1)
-        val call = retrofitSevice.pokemonSearch3(1)
-
-//        call.enqueue(object :Callback<String> {
-//            override fun onResponse(call: Call<String>, response: Response<String>) {
-//                val s = response.body()
-//                AlertDialog.Builder(this@MainActivity).setMessage("$s").create().show()
-//            }
-//
-//            override fun onFailure(call: Call<String>, t: Throwable) {
-//                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
-//            }
-//
-//        })
+        val call = retrofitSevice.pokemonSearch(s)
 
         call.enqueue(object : Callback<PokemonData> {
             override fun onResponse(call: Call<PokemonData>, response: Response<PokemonData>) {
+//                for (i in 0..20){
+//                    val pogo = PokemonData(pokemonmain!!.id,pokemonmain!!.name,pokemonmain!!.sprites,pokemonmain!!.species)
+//
+//                }
                 pokemonmain = response.body()
-//                AlertDialog.Builder(this@MainActivity).setMessage("${pokemonmain?.pogo?.get(0)?.id} : ${pokemonmain?.pogo?.get(0)?.name}\n ${pokemonmain?.pogo?.get(0)?.height}\n${pokemonmain?.pogo?.get(0)?.weight}\n${pokemonmain?.pogo?.get(0)?.order}\n${pokemonmain?.pogo?.get(0)?.sprites?.back_default}").create().show()
-//                Log.d("poData", "${pokemonmain}")
-                    AlertDialog.Builder(this@MainActivity).setMessage("${pokemonmain}").create().show()
+
+                AlertDialog.Builder(this@MainActivity).setMessage("${pokemonmain}").create().show()
             }
 
             override fun onFailure(call: Call<PokemonData>, t: Throwable) {
@@ -95,9 +89,8 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
     }
+
+
 }
-
-
-
-//}

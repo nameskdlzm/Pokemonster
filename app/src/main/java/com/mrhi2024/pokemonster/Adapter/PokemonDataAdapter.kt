@@ -9,15 +9,16 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
-import com.mrhi2024.pokemon.databinding.RecyclerItemFragmentBinding
+import com.mrhi2024.pokemon.databinding.RecyclerItemListFragmentBinding
 
-class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) : Adapter<PokemonDataAdapter.VH>() {
+class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) :
+    Adapter<PokemonDataAdapter.VH>() {
 
-    inner class VH(val binding: RecyclerItemFragmentBinding) : ViewHolder(binding.root)
+    inner class VH(val binding: RecyclerItemListFragmentBinding) : ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
         val layoutInflater: LayoutInflater = LayoutInflater.from(context)
-        val binding = RecyclerItemFragmentBinding.inflate(layoutInflater, parent, false)
+        val binding = RecyclerItemListFragmentBinding.inflate(layoutInflater, parent, false)
         return VH(binding)
     }
 
@@ -30,7 +31,7 @@ class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) 
 
         holder.binding.tvName.text = poke.name
         holder.binding.tvNum.text = poke.id.toString()
-        Glide.with(context).load(poke.sprites.back_default).into(holder.binding.ivCat)
+//        Glide.with(context).load(poke.sprites.back_default).into(holder.binding.ivCat)
 
         holder.binding.root.setOnClickListener {
             val intent = Intent(context, PokemonData::class.java)
