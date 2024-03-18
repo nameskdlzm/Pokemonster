@@ -75,10 +75,10 @@ class MainActivity : AppCompatActivity() {
 
         call.enqueue(object : Callback<PokemonData> {
             override fun onResponse(call: Call<PokemonData>, response: Response<PokemonData>) {
-                for (i in 0..20){
-                    val pogo = PokemonData(pokemonmain!!.id,pokemonmain!!.name,pokemonmain!!.sprites,pokemonmain!!.species)
-
-                }
+//                for (i in 0..20){
+//                    val pogo = PokemonData(pokemonmain!!.id,pokemonmain!!.name,pokemonmain!!.sprites,pokemonmain!!.species)
+//
+//                }
                 pokemonmain = response.body()
 
                 AlertDialog.Builder(this@MainActivity).setMessage("${pokemonmain}").create().show()

@@ -11,8 +11,8 @@ interface RetrofitService {
     @GET("/api/v2/pokemon")
     fun pokemonSearch(@Query("name") name: String): Call<PokemonData>
 
-    @GET("v2/ability/?limit=20&offset=20")
-    fun pokemonSearch5(@Query("name") name: String): Call<PokemonData>
+//    @GET("v2/ability/?limit=20&offset=20")
+//    fun pokemonSearch5(@Query("name") name: String): Call<PokemonData>
 
 
     @GET("/api/v2/pokemon/{id}")
