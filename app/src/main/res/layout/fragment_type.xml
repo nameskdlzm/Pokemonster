@@ -9,7 +9,7 @@
        android:id="@+id/type_Fire"
        android:layout_width="100dp"
        android:layout_height="100dp"
-       android:src="@drawable/btn_type"
+       android:src="@drawable/btn_type_fire"
        android:padding="8dp"
        android:layout_marginLeft="20dp"
        android:layout_marginTop="20dp" />
@@ -18,18 +18,17 @@
         android:id="@+id/type_Bug"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_bug"
         android:padding="8dp"
         android:layout_marginLeft="135dp"
         android:layout_marginTop="20dp"
-        android:layout_alignStart="@id/type_Fire"
-        />
+        android:layout_alignStart="@id/type_Fire"/>
 
     <ImageView
         android:id="@+id/Dark"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_dark"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -40,13 +39,13 @@
         android:id="@+id/Dragon"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_dragon"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_below="@id/type_Fire"/>
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/Electric"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -57,13 +56,13 @@
         android:layout_below="@id/type_Bug"
         app:civ_border_width="1dp"
         app:civ_border_color="@color/black"
-        android:src="@drawable/btn_type"/>
+        android:src="@drawable/btn_type_eletric"/>
 
     <ImageView
         android:id="@+id/Falry"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_falry"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -75,7 +74,7 @@
         android:id="@+id/Fighting"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_fighting"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -85,7 +84,7 @@
         android:id="@+id/Flying"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_flying"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -96,7 +95,7 @@
         android:id="@+id/Ghost"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_ghost"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -108,7 +107,7 @@
         android:id="@+id/Grass"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_grass"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -118,7 +117,7 @@
         android:id="@+id/Ground"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_ground"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -129,7 +128,7 @@
         android:id="@+id/Ice"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_ice"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -141,7 +140,7 @@
         android:id="@+id/Normal"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_normal"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -151,7 +150,7 @@
         android:id="@+id/Poison"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_poison"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -162,7 +161,7 @@
         android:id="@+id/Psychic"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_psychic"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -173,7 +172,7 @@
         android:id="@+id/Steel"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_steel"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -185,7 +184,7 @@
         android:id="@+id/Water"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type"
+        android:src="@drawable/btn_type_water"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
@@ -195,23 +194,13 @@
      android:id="@+id/Rock"
      android:layout_width="100dp"
      android:layout_height="100dp"
-     android:src="@drawable/btn_type"
+     android:src="@drawable/btn_type_rock"
      android:padding="8dp"
      android:layout_marginLeft="20dp"
      android:layout_marginTop="20dp"
      android:layout_alignParentRight="true"
      android:layout_below="@id/Steel"
      android:layout_marginRight="20dp"/>
-
-
-
-
-
-
-
-
-
-
 
 
 </RelativeLayout>

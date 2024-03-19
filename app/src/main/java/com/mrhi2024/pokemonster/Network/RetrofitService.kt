@@ -1,15 +1,23 @@
 package com.mrhi2024.pokemonster.Network
 
+import KakaoSearchPlaceResponse
 import PokemonData
+import RealPokemon
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface RetrofitService {
 
-    @GET("/pokemongo/pokemon/001.png")
-    fun pokemonSearch(@Query("name") name: String): Call<PokemonData>
+    @GET("/Biuni/PokemonGO-Pokedex/master/pokedex.json")
+    fun pokemonSearch(): Call<RealPokemon>
+
+    @Headers("Authorization: KakaoAK 218ae28eb63a74438ec96a51e9568f9b")
+    @GET("/v2/local/search/keyword.json?sort=distance")
+    fun searchPlace(@Query("query") query:String,@Query("x") longitude:String,@Query("y") letitude:String) : Call<KakaoSearchPlaceResponse>
+
 
 //    @GET("v2/ability/?limit=20&offset=20")
 //    fun pokemonSearch5(@Query("name") name: String): Call<PokemonData>

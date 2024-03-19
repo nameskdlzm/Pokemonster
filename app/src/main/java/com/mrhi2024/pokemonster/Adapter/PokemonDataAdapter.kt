@@ -31,7 +31,7 @@ class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) 
 
         holder.binding.tvName.text = poke.name
         holder.binding.tvNum.text = poke.id.toString()
-//        Glide.with(context).load(poke.sprites.back_default).into(holder.binding.ivCat)
+        Glide.with(context).load(poke.img).into(holder.binding.ivCat)
 
         holder.binding.root.setOnClickListener {
             val intent = Intent(context, PokemonData::class.java)

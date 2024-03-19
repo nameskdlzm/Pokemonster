@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +18,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name="com.mrhi2024.pokemon.Activities.MainActivity"
+            android:name="com.mrhi2024.pokemonster.Activities.PlaceDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.MainActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.SignupActivity"
@@ -39,10 +44,7 @@
 
         <meta-data
             android:name="com.kakao.vectormap.APP_KEY"
-            android:value="692c65c843eca07476b0cc42d3e93152"/>
-
-
-
+            android:value="d3d4475009ba9fd452ccbdd3d457ad68" />
     </application>
 
 </manifest>

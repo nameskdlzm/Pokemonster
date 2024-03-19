@@ -38,32 +38,32 @@ class PokemonListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val ma: MainActivity = activity as MainActivity
-        ma.pokemonmain ?: return
+        ma.realPokemon ?: return
 
 //        AlertDialog.Builder(requireContext()).setMessage("${ma.pokemonmain}").create().show()
-        pokemonList!!.add(
-            PokemonData(
-                ma.pokemonmain!!.id,
-                ma.pokemonmain!!.name,
-                ma.pokemonmain!!.sprites,
-                ma.pokemonmain!!.species
-            )
-        )
+//        pokemonList!!.add(
+//            PokemonData(
+//                ma.pokemonmain!!.id,
+//                ma.pokemonmain!!.name,
+//                ma.pokemonmain!!.sprites,
+//                ma.pokemonmain!!.species
+//            )
+//        )
 //        val data  = List<Pokefinal2>(0,ma.pokemonmain.)
 //        val popo = List<Pokefinal>(0,ma.pokemonmain )
-        binding.recyclerView.adapter = PokemonDataAdapter(requireContext(), pokemonList)
+        binding.recyclerView.adapter = PokemonDataAdapter(requireContext(), ma.realPokemon!!.pokemon)
 
-        for (i in 0..20) {
-
-//         val pogo:PokemonData =PokemonData(ma.pokemonmain!!.id, ma.pokemonmain!!.name,ma.pokemonmain!!.sprites,ma.pokemonmain!!.species)
+//        for (i in 0..20) {
+//
+////         val pogo:PokemonData =PokemonData(ma.pokemonmain!!.id, ma.pokemonmain!!.name,ma.pokemonmain!!.sprites,ma.pokemonmain!!.species)
 
 
         }
+
+
 
 
     }
 
 
 //List<Pokefinal2>(0,ma.pokemonmain)
-
-}
