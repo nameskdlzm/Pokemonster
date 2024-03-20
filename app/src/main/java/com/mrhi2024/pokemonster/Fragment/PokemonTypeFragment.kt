@@ -4,6 +4,7 @@ import NamedAPIResource
 import PokemonAbility
 import PokemonData
 import PokemonType
+import RealPokemon
 import VersionEncounterDetail
 import android.app.Activity
 import android.os.Bundle
@@ -16,12 +17,17 @@ import com.mrhi2024.pokemon.R
 import com.mrhi2024.pokemon.databinding.FragmentPokemonBinding
 import com.mrhi2024.pokemon.databinding.FragmentTypeBinding
 import com.mrhi2024.pokemonster.Adapter.PokemonDataAdapter
+import typedata
 
-class PokemonTypeFragment:Fragment() {
+class PokemonTypeFragment : Fragment() {
 
     lateinit var binding: FragmentTypeBinding
 
-    var type:String? = null
+//    var typeUnit:RealPokemon = RealPokemon(pokemon = List<PokemonData>(0,))
+
+    var type: String? = null
+
+    var s = clickchoic()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,7 +46,6 @@ class PokemonTypeFragment:Fragment() {
         binding.root.setOnClickListener {
 
 
-
         }
     }
 
@@ -48,16 +53,17 @@ class PokemonTypeFragment:Fragment() {
     override fun onResume() {
         super.onResume()
 
-        val ma:MainActivity = activity as MainActivity
+        val ma: MainActivity = activity as MainActivity
         ma.realPokemon ?: return
 
 //        binding.recyclerView.adapter = PokemonDataAdapter(requireContext(),ma.realPokemon!!.pokemon)
-
-
+        when(s){
+            s -> binding.typeNormal.setOnClickListener { setChoiceButton() }
+        }
 
     }
 
-    private fun setChoiceButton(){
+    private fun setChoiceButton() {
         binding.typeNormal.setOnClickListener { clickchoic() }
         binding.typeFighting.setOnClickListener { clickchoic() }
         binding.typeFlying.setOnClickListener { clickchoic() }
@@ -78,29 +84,29 @@ class PokemonTypeFragment:Fragment() {
         binding.typeFalry.setOnClickListener { clickchoic() }
     }
 
-    private fun clickchoic(){
+    private fun clickchoic() {
 
         var choiceId = view?.id
 
-        when(choiceId){
-            R.id.type_Normal -> type = "노말타입"
-            R.id.type_Fighting -> type = "격투타입"
-            R.id.type_Flying -> type = "비행타입"
-            R.id.type_Poison -> type = "독타입"
-            R.id.type_Ground -> type = "땅타입"
-            R.id.type_Rock -> type = "바위타입"
-            R.id.type_Bug -> type = "벌레타입"
-            R.id.type_Ghost -> type = "고스트타입"
-            R.id.type_Steel -> type = "강철타입"
-            R.id.type_Fire -> type = "불꽃타입"
-            R.id.type_Water -> type = "물타입"
-            R.id.type_Grass -> type = "풀타입"
-            R.id.type_Electric -> type = "전기타입"
-            R.id.type_Psychic -> type = "에스퍼타입"
-            R.id.type_Ice -> type = "얼음타입"
-            R.id.type_Dragon -> type = "드래곤타입"
-            R.id.type_Dark -> type = "악타입"
-            R.id.type_Falry -> type = "페어리타입"
+        when (choiceId) {
+            R.id.type_Normal -> type = "Normal"
+            R.id.type_Fighting -> type = "Fighting"
+            R.id.type_Flying -> type = "Flying"
+            R.id.type_Poison -> type = "Poison"
+            R.id.type_Ground -> type = "Ground"
+            R.id.type_Rock -> type = "Rock"
+            R.id.type_Bug -> type = "Bug"
+            R.id.type_Ghost -> type = "Ghost"
+            R.id.type_Steel -> type = "Steel"
+            R.id.type_Fire -> type = "Fire"
+            R.id.type_Water -> type = "Water"
+            R.id.type_Grass -> type = "Grass"
+            R.id.type_Electric -> type = "Electric"
+            R.id.type_Psychic -> type = "Psychic"
+            R.id.type_Ice -> type = "Ice"
+            R.id.type_Dragon -> type = "Dragon"
+            R.id.type_Dark -> type = "Dark"
+            R.id.type_Falry -> type = "Falry"
         }
     }
 }

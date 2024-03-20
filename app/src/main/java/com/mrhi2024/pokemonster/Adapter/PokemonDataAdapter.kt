@@ -44,6 +44,9 @@ class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) 
 
 //
 //            context.startActivity(intent)
+
+
+
         }
 
     }
