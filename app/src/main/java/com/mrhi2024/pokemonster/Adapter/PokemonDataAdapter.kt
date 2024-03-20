@@ -1,5 +1,6 @@
 package com.mrhi2024.pokemonster.Adapter
 
+import Pokefinal
 import PokemonData
 import android.content.Context
 import android.content.Intent
@@ -30,17 +31,19 @@ class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) 
         val poke: PokemonData = document[position]
 
         holder.binding.tvName.text = poke.name
-        holder.binding.tvNum.text = poke.id.toString()
+        holder.binding.tvPoketv.text = poke.id.toString()
+        holder.binding.pokeType.text = poke.type.toString()
         Glide.with(context).load(poke.img).into(holder.binding.ivCat)
 
         holder.binding.root.setOnClickListener {
-            val intent = Intent(context, PokemonData::class.java)
+//            val intent = Intent(context, PokemonData::class.java)
+//
+//            val gson = Gson()
+//            val s: String = gson.toJson(poke)
+//
 
-            val gson = Gson()
-            val s: String = gson.toJson(poke)
-            intent.putExtra("poke", s)
-
-            context.startActivity(intent)
+//
+//            context.startActivity(intent)
         }
 
     }

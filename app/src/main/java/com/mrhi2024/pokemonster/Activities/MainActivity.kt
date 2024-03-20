@@ -64,9 +64,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    var searchQuery: String = "음식점"
 
-
-    var searchQuery: String = "화장실"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -114,6 +113,7 @@ class MainActivity : AppCompatActivity() {
         call.enqueue(object : Callback<RealPokemon> {
             override fun onResponse(call: Call<RealPokemon>, response: Response<RealPokemon>) {
                 realPokemon = response.body()
+//                AlertDialog.Builder(this@MainActivity).setMessage("${realPokemon}").create().show()
             }
 
             override fun onFailure(call: Call<RealPokemon>, t: Throwable) {
@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity() {
                 val documents: List<Place>? = searchPlaceResponse?.documents
 
 
-                binding.bnv.selectedItemId = R.id.menu_bnv_main
+                binding.bnv.selectedItemId = R.id.menu_bnv_map
 
             }
 
@@ -213,6 +213,8 @@ class MainActivity : AppCompatActivity() {
         }
         locationProviderClient.requestLocationUpdates(request,locationCallback,Looper.getMainLooper())
     }
+
+
 
 
 }

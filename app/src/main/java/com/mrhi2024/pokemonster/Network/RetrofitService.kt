@@ -19,17 +19,4 @@ interface RetrofitService {
     fun searchPlace(@Query("query") query:String,@Query("x") longitude:String,@Query("y") letitude:String) : Call<KakaoSearchPlaceResponse>
 
 
-//    @GET("v2/ability/?limit=20&offset=20")
-//    fun pokemonSearch5(@Query("name") name: String): Call<PokemonData>
-
-
-    @GET("/api/v2/pokemon/{id}")
-    fun pokemonSearch2(@Path("id") id:Int ): Call<PokemonData>
-
-    @GET("/api/v2/pokemon/{id}")
-    fun pokemonSearch3(@Path("id") id: Int): Call<PokemonData>
-
-    @GET("/api/v2/ability/{id}")
-    fun pokemonSearch4(@Path("id") id: Int): Call<PokemonData>
-
 }

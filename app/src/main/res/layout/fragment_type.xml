@@ -5,48 +5,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+
    <ImageView
        android:id="@+id/type_Fire"
        android:layout_width="100dp"
        android:layout_height="100dp"
-       android:src="@drawable/btn_type_fire"
        android:padding="8dp"
        android:layout_marginLeft="20dp"
-       android:layout_marginTop="20dp" />
+       android:layout_marginTop="20dp"
+       android:background="@drawable/btn_type_fire"
+       android:src="@drawable/fire"/>
 
     <ImageView
         android:id="@+id/type_Bug"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_bug"
+        android:src="@drawable/bug"
         android:padding="8dp"
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="110dp"
         android:layout_marginTop="20dp"
-        android:layout_alignStart="@id/type_Fire"/>
+        android:layout_alignStart="@id/type_Fire"
+        android:background="@drawable/btn_type_bug"/>
 
     <ImageView
-        android:id="@+id/Dark"
+        android:id="@+id/type_Dark"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_dark"
+        android:src="@drawable/dark"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_type_dark"/>
 
     <ImageView
-        android:id="@+id/Dragon"
+        android:id="@+id/type_Dragon"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_dragon"
+        android:src="@drawable/dragon"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/type_Fire"/>
+        android:layout_below="@id/type_Fire"
+        android:background="@drawable/btn_type_dragon"/>
 
     <ImageView
-        android:id="@+id/Electric"
+        android:id="@+id/type_Electric"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:padding="8dp"
@@ -56,151 +61,165 @@
         android:layout_below="@id/type_Bug"
         app:civ_border_width="1dp"
         app:civ_border_color="@color/black"
-        android:src="@drawable/btn_type_eletric"/>
+        android:src="@drawable/electric"
+        android:background="@drawable/btn_type_eletric"/>
 
     <ImageView
-        android:id="@+id/Falry"
+        android:id="@+id/type_Falry"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_falry"
+        android:src="@drawable/fairy"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/Dark"
-        android:layout_marginRight="20dp"/>
+        android:layout_below="@id/type_Dark"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_type_falry"/>
 
     <ImageView
-        android:id="@+id/Fighting"
+        android:id="@+id/type_Fighting"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_fighting"
+        android:src="@drawable/fighting"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/Dragon"/>
+        android:layout_below="@id/type_Dragon"
+        android:background="@drawable/btn_type_fighting"/>
 
     <ImageView
-        android:id="@+id/Flying"
+        android:id="@+id/type_Flying"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_flying"
+        android:src="@drawable/flying"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_alignRight="@id/type_Bug"
-        android:layout_below="@id/Electric"/>
+        android:layout_below="@id/type_Electric"
+        android:background="@drawable/btn_type_flying"/>
 
     <ImageView
-        android:id="@+id/Ghost"
+        android:id="@+id/type_Ghost"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_ghost"
+        android:src="@drawable/ghost"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/Falry"/>
+        android:layout_below="@id/type_Falry"
+        android:background="@drawable/btn_type_ghost"/>
 
     <ImageView
-        android:id="@+id/Grass"
+        android:id="@+id/type_Grass"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_grass"
+        android:src="@drawable/grass"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/Fighting"/>
+        android:layout_below="@id/type_Fighting"
+        android:background="@drawable/btn_type_grass"/>
 
     <ImageView
-        android:id="@+id/Ground"
+        android:id="@+id/type_Ground"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_ground"
+        android:src="@drawable/ground"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_alignRight="@id/type_Bug"
-        android:layout_below="@id/Flying" />
+        android:layout_below="@id/type_Flying"
+        android:background="@drawable/btn_type_ground"/>
 
     <ImageView
-        android:id="@+id/Ice"
+        android:id="@+id/type_Ice"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_ice"
+        android:src="@drawable/ice"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
         android:layout_marginRight="20dp"
-        android:layout_below="@id/Ghost"/>
+        android:layout_below="@id/type_Ghost"
+        android:background="@drawable/btn_type_ice"/>
 
     <ImageView
-        android:id="@+id/Normal"
+        android:id="@+id/type_Normal"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_normal"
+        android:src="@drawable/normal"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/Grass"/>
+        android:layout_below="@id/type_Grass"
+        android:background="@drawable/btn_type_normal"/>
 
     <ImageView
-        android:id="@+id/Poison"
+        android:id="@+id/type_Poison"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_poison"
+        android:src="@drawable/poison"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_alignRight="@id/Psychic"
-        android:layout_below="@id/Psychic"/>
+        android:layout_alignRight="@id/type_Psychic"
+        android:layout_below="@id/type_Psychic"
+        android:background="@drawable/btn_type_poison"/>
 
     <ImageView
-        android:id="@+id/Psychic"
+        android:id="@+id/type_Psychic"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_psychic"
+        android:src="@drawable/psychic"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_alignRight="@id/Ground"
-        android:layout_below="@id/Ground"/>
+        android:layout_alignRight="@id/type_Ground"
+        android:layout_below="@id/type_Ground"
+        android:background="@drawable/btn_type_psychic"/>
 
     <ImageView
-        android:id="@+id/Steel"
+        android:id="@+id/type_Steel"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_steel"
+        android:src="@drawable/steel"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/Ice"
-        android:layout_marginRight="20dp"/>
+        android:layout_below="@id/type_Ice"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_type_steel"/>
 
     <ImageView
-        android:id="@+id/Water"
+        android:id="@+id/type_Water"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/btn_type_water"
+        android:src="@drawable/water"
         android:padding="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/Normal"/>
+        android:layout_below="@id/type_Normal"
+        android:background="@drawable/btn_type_water"/>
 
  <ImageView
-     android:id="@+id/Rock"
+     android:id="@+id/type_Rock"
      android:layout_width="100dp"
      android:layout_height="100dp"
-     android:src="@drawable/btn_type_rock"
+     android:src="@drawable/rock"
      android:padding="8dp"
      android:layout_marginLeft="20dp"
      android:layout_marginTop="20dp"
      android:layout_alignParentRight="true"
-     android:layout_below="@id/Steel"
-     android:layout_marginRight="20dp"/>
+     android:layout_below="@id/type_Steel"
+     android:layout_marginRight="20dp"
+     android:background="@drawable/btn_type_rock"/>
 
 
 </RelativeLayout>

@@ -14,10 +14,10 @@ data class PokemonData(
     var img: String,
 //    var type: List<Type>,
 //    var base_experience: Int,
-    var height: String,
+//    var height: String,
 //    var is_default: Boolean,
 //    var order: Int,
-    var weight: String,
+//    var weight: String,
 //    var forms: List<NamedAPIResource>,
 //    var game_indices: List<VersionEncounterDetail>,
 //    var held_items: List<PokemonHeldItem>,
@@ -28,8 +28,10 @@ data class PokemonData(
 //    var cries: PokemonCries,
 //    var species: NamedAPIResource,
 //    var stats: List<PokemonStat>,
-//    var types: List<PokemonType>
-)
+    var type: List<String>
+//    var type:String
+    )
+data class typedata(var Grass: String , var Poison: String)
 
 data class KakaoSearchPlaceResponse(var meta:PlaceMeta , var documents:List<Place>)
 

@@ -41,10 +41,10 @@ class PokemonMapFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.mapView.start()
+        binding.mapView.start(mapReadyCallback)
     }
 
-    private val mapCallback: KakaoMapReadyCallback = object : KakaoMapReadyCallback() {
+    private val mapReadyCallback: KakaoMapReadyCallback = object : KakaoMapReadyCallback() {
         override fun onMapReady(kakaoMap: KakaoMap) {
             val latitude: Double = (activity as MainActivity).myLocation?.latitude ?: 37.566
             val longitude: Double = (activity as MainActivity).myLocation?.longitude ?: 16.9782
@@ -95,10 +95,8 @@ class PokemonMapFragment : Fragment() {
             }
 
             kakaoMap.setOnInfoWindowClickListener { kakaoMap, infoWindow, guiId ->
-                // 장소에 대한 상세 소개 웹페이지를 보여주는 화면으로 이동
                 val intent = Intent(requireContext(), PlaceDetailActivity::class.java)
 
-                // 클릭한 장소에 대한 정보를 json문자열로 변환하여 전달해주기
                 val place = infoWindow.tag as Place
                 val json: String = Gson().toJson(place)
                 intent.putExtra("place", json)
