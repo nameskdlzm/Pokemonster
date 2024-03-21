@@ -8,9 +8,12 @@ import RealPokemon
 import VersionEncounterDetail
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.mrhi2024.pokemon.Activities.MainActivity
 import com.mrhi2024.pokemon.R
@@ -27,7 +30,10 @@ class PokemonTypeFragment : Fragment() {
 
     var type: String? = null
 
-    var s = clickchoic()
+//    var s = clickchoic()
+
+    val s: MutableList<RealPokemon> = mutableListOf()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,27 +58,105 @@ class PokemonTypeFragment : Fragment() {
     // 화면이 사용자에게 보여질때
     override fun onResume() {
         super.onResume()
+        val main =activity as MainActivity
+        val ww=main.pokemonmain?.type
+
 
         val ma: MainActivity = activity as MainActivity
         ma.realPokemon ?: return
-
-//        binding.recyclerView.adapter = PokemonDataAdapter(requireContext(),ma.realPokemon!!.pokemon)
-        when(s){
-            s -> binding.typeNormal.setOnClickListener { setChoiceButton() }
+        binding.typeFighting.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
+
+        binding.typeNormal.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeBug.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeIce.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeDragon.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typePsychic.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeElectric.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeGrass.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeWater.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeFire.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeRock.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeGhost.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeGround.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeFlying.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typePoison.setOnClickListener{
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+//        binding.typeNormal.setOnClickListener {
+//            while (true) {
+////                if (binding.typeNormal == (binding.typeNormal)) {
+////                    s.add(ma.realPokemon!!)
+////                }
+////                else if (binding.typeNormal !=binding.typeNormal){
+////                    continue
+////                }else if (ww ==null){
+////                    break
+////                }
+//                if (ww!!.equals("Normal")){
+//                    s.add(ma.realPokemon!!)
+//                }else if (ww != binding.root){
+//                    continue
+////                    Log.d("aaa","$ww")
+//                }
+//                break
+//            }
+                
+//            AlertDialog.Builder(requireContext()).setMessage("${ww}").create().show()
+//        }
 
     }
 
     private fun setChoiceButton() {
-        binding.typeNormal.setOnClickListener { clickchoic() }
-        binding.typeFighting.setOnClickListener { clickchoic() }
+
+         { clickchoic() }
         binding.typeFlying.setOnClickListener { clickchoic() }
         binding.typePoison.setOnClickListener { clickchoic() }
         binding.typeGround.setOnClickListener { clickchoic() }
         binding.typeRock.setOnClickListener { clickchoic() }
         binding.typeBug.setOnClickListener { clickchoic() }
         binding.typeGhost.setOnClickListener { clickchoic() }
-        binding.typeSteel.setOnClickListener { clickchoic() }
         binding.typeFire.setOnClickListener { clickchoic() }
         binding.typeWater.setOnClickListener { clickchoic() }
         binding.typeGrass.setOnClickListener { clickchoic() }
@@ -80,8 +164,9 @@ class PokemonTypeFragment : Fragment() {
         binding.typePsychic.setOnClickListener { clickchoic() }
         binding.typeIce.setOnClickListener { clickchoic() }
         binding.typeDragon.setOnClickListener { clickchoic() }
-        binding.typeDark.setOnClickListener { clickchoic() }
-        binding.typeFalry.setOnClickListener { clickchoic() }
+//        binding.typeSteel.setOnClickListener { clickchoic() }
+//        binding.typeDark.setOnClickListener { clickchoic() }
+//        binding.typeFalry.setOnClickListener { clickchoic() }
     }
 
     private fun clickchoic() {
@@ -97,7 +182,6 @@ class PokemonTypeFragment : Fragment() {
             R.id.type_Rock -> type = "Rock"
             R.id.type_Bug -> type = "Bug"
             R.id.type_Ghost -> type = "Ghost"
-            R.id.type_Steel -> type = "Steel"
             R.id.type_Fire -> type = "Fire"
             R.id.type_Water -> type = "Water"
             R.id.type_Grass -> type = "Grass"
@@ -105,8 +189,9 @@ class PokemonTypeFragment : Fragment() {
             R.id.type_Psychic -> type = "Psychic"
             R.id.type_Ice -> type = "Ice"
             R.id.type_Dragon -> type = "Dragon"
-            R.id.type_Dark -> type = "Dark"
-            R.id.type_Falry -> type = "Falry"
+//            R.id.type_Steel -> type = "Steel"
+//            R.id.type_Dark -> type = "Dark"
+//            R.id.type_Falry -> type = "Falry"
         }
     }
 }

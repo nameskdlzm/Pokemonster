@@ -66,6 +66,8 @@ class MainActivity : AppCompatActivity() {
 
     var searchQuery: String = "음식점"
 
+//    var types:type? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -106,7 +108,8 @@ class MainActivity : AppCompatActivity() {
 //        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show()
         val s = binding.etSearch.text.toString()
 
-        val retrofit = RetrofitHelper.getRetrofitInstance("https://raw.githubusercontent.com")
+//        val retrofit = RetrofitHelper.getRetrofitInstance("https://raw.githubusercontent.com")
+        val retrofit = RetrofitHelper.getRetrofitInstance("https://github.com/")
         val retrofitSevice = retrofit.create(RetrofitService::class.java)
         val call = retrofitSevice.pokemonSearch()
 
@@ -117,8 +120,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<RealPokemon>, t: Throwable) {
-                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@MainActivity, t.message, Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(this@MainActivity).setMessage("${t.message}").create().show()
             }
+
 
         })
 

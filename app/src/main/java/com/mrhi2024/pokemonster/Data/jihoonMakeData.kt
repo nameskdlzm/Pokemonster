@@ -13,4 +13,4 @@ data class Forms(val name:String,val url:String)
 data class GameIndices(val game_index:String,val version:Version )
 data class Version(val name:String,val url:String)
 //data class HeldItems()
-//val held_items:List<HeldItems> // 배열
+//val held_items:List<HeldItems> // 배열  지훈이 사랑해

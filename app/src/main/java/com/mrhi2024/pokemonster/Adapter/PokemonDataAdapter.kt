@@ -31,7 +31,7 @@ class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) 
         val poke: PokemonData = document[position]
 
         holder.binding.tvName.text = poke.name
-        holder.binding.tvPoketv.text = poke.id.toString()
+        holder.binding.tvPoketv.text = poke.num.toString()
         holder.binding.pokeType.text = poke.type.toString()
         Glide.with(context).load(poke.img).into(holder.binding.ivCat)
 

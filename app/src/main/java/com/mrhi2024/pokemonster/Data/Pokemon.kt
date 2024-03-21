@@ -6,9 +6,11 @@ data class Pokefinal(var abilities: List<Ability>,var pogo: List<PokemonData>)
 
 data class RealPokemon(val pokemon: List<PokemonData>)
 
+//data class type(val types:List<typedata>)
+
 data class PokemonData(
 //    var abilities: List<PokemonAbility>,
-    var id: Int,
+//    var id: Int,
     var num: Int,
     var name: String,
     var img: String,
