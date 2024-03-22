@@ -44,6 +44,11 @@ class MainActivity : AppCompatActivity() {
     var realPokemon: RealPokemon? = null
 
     var myLocation: Location? = null
+//
+//    var pokego:Pogogo? = null
+//
+//    var pokeke:bbb? = null
+
 
     var searchPlaceResponse: KakaoSearchPlaceResponse? = null
 
@@ -108,8 +113,8 @@ class MainActivity : AppCompatActivity() {
 //        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show()
         val s = binding.etSearch.text.toString()
 
-//        val retrofit = RetrofitHelper.getRetrofitInstance("https://raw.githubusercontent.com")
-        val retrofit = RetrofitHelper.getRetrofitInstance("https://github.com/")
+        val retrofit = RetrofitHelper.getRetrofitInstance("https://raw.githubusercontent.com")
+//        val retrofit = RetrofitHelper.getRetrofitInstance("https://github.com/")
         val retrofitSevice = retrofit.create(RetrofitService::class.java)
         val call = retrofitSevice.pokemonSearch()
 

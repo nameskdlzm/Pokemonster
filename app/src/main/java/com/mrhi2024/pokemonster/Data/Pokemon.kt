@@ -2,16 +2,23 @@ import com.mrhi2024.pokemonster.Data.Ability
 import com.mrhi2024.pokemonster.Data.Name
 
 //data class Pokefinal(val count:Int, var next:String, var previous:String, var results: List<NamedAPIResource>)
-data class Pokefinal(var abilities: List<Ability>,var pogo: List<PokemonData>)
+//data class Pokefinal(var abilities: List<Ability>,var pogo: List<PokemonData>)
 
+//data class RealPokemon(val pokemon: List<PokemonData>)
 data class RealPokemon(val pokemon: List<PokemonData>)
 
-//data class type(val types:List<typedata>)
-
+//data class bbb(val pokeke:List<aaa>)
+//data class aaa (val num:Int , val name:String, val variations:List<Pogogo>)
+//data class Pogogo(val variations: List<variations>)
+//data class variations(
+//    val name:String,
+//    val image: String,
+//    val types:List<String>
+//)
 data class PokemonData(
 //    var abilities: List<PokemonAbility>,
-//    var id: Int,
-    var num: Int,
+    var id: Int,
+//    var num: Int,
     var name: String,
     var img: String,
 //    var type: List<Type>,
@@ -30,10 +37,9 @@ data class PokemonData(
 //    var cries: PokemonCries,
 //    var species: NamedAPIResource,
 //    var stats: List<PokemonStat>,
-    var type: List<String>
-//    var type:String
+    var type: List<String>,
+//    var types:List<String>
     )
-data class typedata(var Grass: String , var Poison: String)
 
 data class KakaoSearchPlaceResponse(var meta:PlaceMeta , var documents:List<Place>)
 

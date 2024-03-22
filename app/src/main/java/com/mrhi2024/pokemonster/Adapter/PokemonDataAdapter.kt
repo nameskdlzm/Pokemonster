@@ -1,15 +1,13 @@
 package com.mrhi2024.pokemonster.Adapter
 
-import Pokefinal
 import PokemonData
+import RealPokemon
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.google.gson.Gson
 import com.mrhi2024.pokemon.databinding.RecyclerItemListFragmentBinding
 
 class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) :
@@ -31,7 +29,7 @@ class PokemonDataAdapter(val context: Context, val document: List<PokemonData>) 
         val poke: PokemonData = document[position]
 
         holder.binding.tvName.text = poke.name
-        holder.binding.tvPoketv.text = poke.num.toString()
+        holder.binding.tvPoketv.text = poke.id.toString()
         holder.binding.pokeType.text = poke.type.toString()
         Glide.with(context).load(poke.img).into(holder.binding.ivCat)
 

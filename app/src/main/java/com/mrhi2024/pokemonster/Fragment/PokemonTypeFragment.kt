@@ -20,7 +20,6 @@ import com.mrhi2024.pokemon.R
 import com.mrhi2024.pokemon.databinding.FragmentPokemonBinding
 import com.mrhi2024.pokemon.databinding.FragmentTypeBinding
 import com.mrhi2024.pokemonster.Adapter.PokemonDataAdapter
-import typedata
 
 class PokemonTypeFragment : Fragment() {
 
@@ -31,8 +30,6 @@ class PokemonTypeFragment : Fragment() {
     var type: String? = null
 
 //    var s = clickchoic()
-
-    val s: MutableList<RealPokemon> = mutableListOf()
 
 
     override fun onCreateView(
@@ -58,69 +55,84 @@ class PokemonTypeFragment : Fragment() {
     // 화면이 사용자에게 보여질때
     override fun onResume() {
         super.onResume()
-        val main =activity as MainActivity
-        val ww=main.pokemonmain?.type
+        val main = activity as MainActivity
+        val ww = main.pokemonmain?.type
+        val s: MutableList<PokemonData> = mutableListOf()
 
 
         val ma: MainActivity = activity as MainActivity
         ma.realPokemon ?: return
-        binding.typeFighting.setOnClickListener{
+        binding.typeFighting.setOnClickListener {
+
+
+
+
+//            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.typeNormal.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeNormal.setOnClickListener{
+        binding.typeBug.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeBug.setOnClickListener{
+        binding.typeIce.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeIce.setOnClickListener{
+        binding.typeDragon.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeDragon.setOnClickListener{
+        binding.typePsychic.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typePsychic.setOnClickListener{
+        binding.typeElectric.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeElectric.setOnClickListener{
+        binding.typeGrass.setOnClickListener {
+//            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+            if (ma.realPokemon!!.pokemon[0].type.equals("Grass")) {
+                s.add(PokemonData(ma.realPokemon!!.pokemon!!.get(0).id,
+                    ma.realPokemon!!.pokemon!!.get(1).name,
+                    ma.realPokemon!!.pokemon!!.get(2).img,
+                    ma.realPokemon!!.pokemon.get(3).type))
+            } else {
+
+                Toast.makeText(requireContext(), "asdsad", Toast.LENGTH_SHORT).show()
+
+            }
+        }
+
+        binding.typeWater.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeGrass.setOnClickListener{
+        binding.typeFire.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeWater.setOnClickListener{
+        binding.typeRock.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeFire.setOnClickListener{
+        binding.typeGhost.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeRock.setOnClickListener{
+        binding.typeGround.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeGhost.setOnClickListener{
+        binding.typeFlying.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
-        binding.typeGround.setOnClickListener{
-            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
-        }
-
-        binding.typeFlying.setOnClickListener{
-            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
-        }
-
-        binding.typePoison.setOnClickListener{
+        binding.typePoison.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
         }
 
@@ -142,7 +154,7 @@ class PokemonTypeFragment : Fragment() {
 //                }
 //                break
 //            }
-                
+
 //            AlertDialog.Builder(requireContext()).setMessage("${ww}").create().show()
 //        }
 
@@ -150,7 +162,7 @@ class PokemonTypeFragment : Fragment() {
 
     private fun setChoiceButton() {
 
-         { clickchoic() }
+        { clickchoic() }
         binding.typeFlying.setOnClickListener { clickchoic() }
         binding.typePoison.setOnClickListener { clickchoic() }
         binding.typeGround.setOnClickListener { clickchoic() }
