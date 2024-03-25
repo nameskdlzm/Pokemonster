@@ -98,23 +98,23 @@ class PokemonTypeFragment : Fragment() {
         }
 
         binding.typeGrass.setOnClickListener {
-//            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
 
-            for (pokemon in ma.realPokemon!!.pokemon) {
-
-                if (pokemon.type == ma.realPokemon!!.pokemon.get(0).type) {
-                    s.add(pokemon)
-                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
-//                    Log.d("aaa","$s")
-                } else if (pokemon.type == ma.realPokemon!!.pokemon.get(1).type) {
-                    s.add(pokemon)
+//            for (pokemon in ma.realPokemon!!.pokemon) {
+//
+//                if (pokemon.type == ma.realPokemon!!.pokemon.get(0).type) {
+//                    s.add(pokemon)
 //                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
-                } else if (s.isNotEmpty()){
-//                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
-                }else{
-                    Toast.makeText(requireContext(), "aaa", Toast.LENGTH_SHORT).show()
-                }
-            }
+////                    Log.d("aaa","$s")
+//                } else if (pokemon.type == ma.realPokemon!!.pokemon.get(1).type) {
+//                    s.add(pokemon)
+////                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
+//                } else if (s.isNotEmpty()){
+////                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
+//                }else{
+//                    Toast.makeText(requireContext(), "aaa", Toast.LENGTH_SHORT).show()
+//                }
+//            }
 
 
 
