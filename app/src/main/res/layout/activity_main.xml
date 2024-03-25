@@ -24,7 +24,7 @@
                 android:layout_marginRight="32dp"
                 android:background="@color/white"
                 android:gravity="center"
-                android:hint="포켓몬 이름 , 속성 입력"
+                android:hint="포켓몬 이름"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textSize="16dp" />

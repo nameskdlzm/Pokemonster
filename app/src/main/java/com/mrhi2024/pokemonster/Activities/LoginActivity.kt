@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding.layoutEmailLogin.setOnClickListener { startActivity(Intent(this,SignupActivity::class.java)) }
 
-        binding.btnLoginKakao.setOnClickListener { clickKakao() }
-        binding.btnLoginGoogle.setOnClickListener { clickGoogle() }
+//        binding.btnLoginKakao.setOnClickListener { clickKakao() }
+//        binding.btnLoginGoogle.setOnClickListener { clickGoogle() }
 
     }
 

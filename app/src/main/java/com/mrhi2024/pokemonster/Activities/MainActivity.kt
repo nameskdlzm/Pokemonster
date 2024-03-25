@@ -5,6 +5,7 @@ import Place
 import PlaceMeta
 import PokemonData
 import RealPokemon
+import TypePokemon
 import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
@@ -44,13 +45,12 @@ class MainActivity : AppCompatActivity() {
     var realPokemon: RealPokemon? = null
 
     var myLocation: Location? = null
-//
-//    var pokego:Pogogo? = null
-//
-//    var pokeke:bbb? = null
 
+    var poketypego:TypePokemon? = null
 
     var searchPlaceResponse: KakaoSearchPlaceResponse? = null
+
+    var searchPokemon:PokemonData? =null
 
     val locationProviderClient: FusedLocationProviderClient by lazy {
         LocationServices.getFusedLocationProviderClient(this)
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
             locationProviderClient.removeLocationUpdates(this)
 
-            searchPlaces()
+
 
         }
     }
@@ -107,12 +107,10 @@ class MainActivity : AppCompatActivity() {
             requestMyLocation()
         }
 
+
     }
 
     private fun pokemon() {
-//        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show()
-        val s = binding.etSearch.text.toString()
-
         val retrofit = RetrofitHelper.getRetrofitInstance("https://raw.githubusercontent.com")
 //        val retrofit = RetrofitHelper.getRetrofitInstance("https://github.com/")
         val retrofitSevice = retrofit.create(RetrofitService::class.java)

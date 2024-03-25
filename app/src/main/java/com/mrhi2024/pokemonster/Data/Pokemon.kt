@@ -15,6 +15,9 @@ data class RealPokemon(val pokemon: List<PokemonData>)
 //    val image: String,
 //    val types:List<String>
 //)
+
+data class TypePokemon(val type: List<String>)
+
 data class PokemonData(
 //    var abilities: List<PokemonAbility>,
     var id: Int,
@@ -39,27 +42,28 @@ data class PokemonData(
 //    var stats: List<PokemonStat>,
     var type: List<String>,
 //    var types:List<String>
-    )
-
-data class KakaoSearchPlaceResponse(var meta:PlaceMeta , var documents:List<Place>)
-
-data class PlaceMeta(var total_count:Int , var pageable_count:Int, var is_end:Boolean)
-data class Place(
-    var id:String ,
-    var place_name:String ,
-    var category_name:String ,
-    var phone:String ,
-    var address_name:String ,
-    var road_address_name:String ,
-    var x:String ,
-    var y:String ,
-    var place_url:String ,
-    var distance:String
 )
+
+data class KakaoSearchPlaceResponse(var meta: PlaceMeta, var documents: List<Place>)
+
+data class PlaceMeta(var total_count: Int, var pageable_count: Int, var is_end: Boolean)
+data class Place(
+    var id: String,
+    var place_name: String,
+    var category_name: String,
+    var phone: String,
+    var address_name: String,
+    var road_address_name: String,
+    var x: String,
+    var y: String,
+    var place_url: String,
+    var distance: String
+)
+
 data class Type(var Grass: String, var Poison: String)
 
 
-data class Name(var name:String , var url:String)
+data class Name(var name: String, var url: String)
 
 data class PokemonAbility(
     var is_hidden: Boolean,

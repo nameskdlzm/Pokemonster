@@ -5,6 +5,7 @@ import PokemonAbility
 import PokemonData
 import PokemonType
 import RealPokemon
+import TypePokemon
 import VersionEncounterDetail
 import android.app.Activity
 import android.os.Bundle
@@ -58,16 +59,18 @@ class PokemonTypeFragment : Fragment() {
         val main = activity as MainActivity
         val ww = main.pokemonmain?.type
         val s: MutableList<PokemonData> = mutableListOf()
-
+//        val poke:TypePokemon = TypePokemon()
 
         val ma: MainActivity = activity as MainActivity
         ma.realPokemon ?: return
         binding.typeFighting.setOnClickListener {
 
+//            for(PokeData in s){
+//                val  pokemonName = PokeData.name
+//                Log.d("Pokemon" , "포켓몬이름:$pokemonName")
+//        }
 
-
-
-//            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(requireContext(), "$s", Toast.LENGTH_SHORT).show()
         }
 
         binding.typeNormal.setOnClickListener {
@@ -96,17 +99,27 @@ class PokemonTypeFragment : Fragment() {
 
         binding.typeGrass.setOnClickListener {
 //            Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
-            if (ma.realPokemon!!.pokemon[0].type.equals("Grass")) {
-                s.add(PokemonData(ma.realPokemon!!.pokemon!!.get(0).id,
-                    ma.realPokemon!!.pokemon!!.get(1).name,
-                    ma.realPokemon!!.pokemon!!.get(2).img,
-                    ma.realPokemon!!.pokemon.get(3).type))
-            } else {
 
-                Toast.makeText(requireContext(), "asdsad", Toast.LENGTH_SHORT).show()
+            for (pokemon in ma.realPokemon!!.pokemon) {
 
+                if (pokemon.type == ma.realPokemon!!.pokemon.get(0).type) {
+                    s.add(pokemon)
+                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
+//                    Log.d("aaa","$s")
+                } else if (pokemon.type == ma.realPokemon!!.pokemon.get(1).type) {
+                    s.add(pokemon)
+//                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
+                } else if (s.isNotEmpty()){
+//                    AlertDialog.Builder(requireContext()).setMessage("$s").create().show()
+                }else{
+                    Toast.makeText(requireContext(), "aaa", Toast.LENGTH_SHORT).show()
+                }
             }
+
+
+
         }
+
 
         binding.typeWater.setOnClickListener {
             Toast.makeText(requireContext(), "구현되지 않은 기능입니다", Toast.LENGTH_SHORT).show()
@@ -158,52 +171,51 @@ class PokemonTypeFragment : Fragment() {
 //            AlertDialog.Builder(requireContext()).setMessage("${ww}").create().show()
 //        }
 
-    }
-
-    private fun setChoiceButton() {
-
-        { clickchoic() }
-        binding.typeFlying.setOnClickListener { clickchoic() }
-        binding.typePoison.setOnClickListener { clickchoic() }
-        binding.typeGround.setOnClickListener { clickchoic() }
-        binding.typeRock.setOnClickListener { clickchoic() }
-        binding.typeBug.setOnClickListener { clickchoic() }
-        binding.typeGhost.setOnClickListener { clickchoic() }
-        binding.typeFire.setOnClickListener { clickchoic() }
-        binding.typeWater.setOnClickListener { clickchoic() }
-        binding.typeGrass.setOnClickListener { clickchoic() }
-        binding.typeElectric.setOnClickListener { clickchoic() }
-        binding.typePsychic.setOnClickListener { clickchoic() }
-        binding.typeIce.setOnClickListener { clickchoic() }
-        binding.typeDragon.setOnClickListener { clickchoic() }
-//        binding.typeSteel.setOnClickListener { clickchoic() }
-//        binding.typeDark.setOnClickListener { clickchoic() }
-//        binding.typeFalry.setOnClickListener { clickchoic() }
-    }
-
-    private fun clickchoic() {
-
-        var choiceId = view?.id
-
-        when (choiceId) {
-            R.id.type_Normal -> type = "Normal"
-            R.id.type_Fighting -> type = "Fighting"
-            R.id.type_Flying -> type = "Flying"
-            R.id.type_Poison -> type = "Poison"
-            R.id.type_Ground -> type = "Ground"
-            R.id.type_Rock -> type = "Rock"
-            R.id.type_Bug -> type = "Bug"
-            R.id.type_Ghost -> type = "Ghost"
-            R.id.type_Fire -> type = "Fire"
-            R.id.type_Water -> type = "Water"
-            R.id.type_Grass -> type = "Grass"
-            R.id.type_Electric -> type = "Electric"
-            R.id.type_Psychic -> type = "Psychic"
-            R.id.type_Ice -> type = "Ice"
-            R.id.type_Dragon -> type = "Dragon"
-//            R.id.type_Steel -> type = "Steel"
-//            R.id.type_Dark -> type = "Dark"
-//            R.id.type_Falry -> type = "Falry"
-        }
+//
+//        private fun setChoiceButton() {
+//
+//            binding.typeFlying.setOnClickListener { clickchoic() }
+//            binding.typePoison.setOnClickListener { clickchoic() }
+//            binding.typeGround.setOnClickListener { clickchoic() }
+//            binding.typeRock.setOnClickListener { clickchoic() }
+//            binding.typeBug.setOnClickListener { clickchoic() }
+//            binding.typeGhost.setOnClickListener { clickchoic() }
+//            binding.typeFire.setOnClickListener { clickchoic() }
+//            binding.typeWater.setOnClickListener { clickchoic() }
+//            binding.typeGrass.setOnClickListener { clickchoic() }
+//            binding.typeElectric.setOnClickListener { clickchoic() }
+//            binding.typePsychic.setOnClickListener { clickchoic() }
+//            binding.typeIce.setOnClickListener { clickchoic() }
+//            binding.typeDragon.setOnClickListener { clickchoic() }
+////        binding.typeSteel.setOnClickListener { clickchoic() }
+////        binding.typeDark.setOnClickListener { clickchoic() }
+////        binding.typeFalry.setOnClickListener { clickchoic() }
+//        }
+//
+//        private fun clickchoic() {
+//
+//            var choiceId = view?.id
+//
+//            when (choiceId) {
+//                R.id.type_Normal -> type = "Normal"
+//                R.id.type_Fighting -> type = "Fighting"
+//                R.id.type_Flying -> type = "Flying"
+//                R.id.type_Poison -> type = "Poison"
+//                R.id.type_Ground -> type = "Ground"
+//                R.id.type_Rock -> type = "Rock"
+//                R.id.type_Bug -> type = "Bug"
+//                R.id.type_Ghost -> type = "Ghost"
+//                R.id.type_Fire -> type = "Fire"
+//                R.id.type_Water -> type = "Water"
+//                R.id.type_Grass -> type = "Grass"
+//                R.id.type_Electric -> type = "Electric"
+//                R.id.type_Psychic -> type = "Psychic"
+//                R.id.type_Ice -> type = "Ice"
+//                R.id.type_Dragon -> type = "Dragon"
+////            R.id.type_Steel -> type = "Steel"
+////            R.id.type_Dark -> type = "Dark"
+////            R.id.type_Falry -> type = "Falry"
+//            }
+//        }
     }
 }
