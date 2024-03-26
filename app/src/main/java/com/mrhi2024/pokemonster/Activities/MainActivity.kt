@@ -66,6 +66,7 @@ class MainActivity : AppCompatActivity() {
 
     var searchQuery: String = "포켓몬"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
