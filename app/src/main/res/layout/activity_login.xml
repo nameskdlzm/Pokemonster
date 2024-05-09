@@ -133,36 +133,37 @@
         android:layout_above="@id/layout_email_login"
         android:layout_marginBottom="16dp">
 
-        <ImageView
-            android:id="@+id/btn_login_kakao"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/icon_kakako"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"/>
-        <ImageView
-            android:id="@+id/btn_login_google"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/icon_google"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"/>
-        <ImageView
-            android:id="@+id/btn_login_naver"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/icon_naver"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/btn_login_kakao"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginRight="16dp"-->
+<!--            android:src="@drawable/icon_kakako" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/btn_login_google"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:src="@drawable/icon_google"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginRight="16dp"/>-->
+<!--        <ImageView-->
+<!--            android:id="@+id/btn_login_naver"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:src="@drawable/icon_naver"-->
+<!--            android:layout_marginLeft="16dp"-->
+<!--            android:layout_marginRight="16dp"/>-->
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="간편하게 로그인하기"
-        android:layout_above="@id/layout_login_btns"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="간편하게 로그인하기"-->
+<!--        android:layout_above="@id/layout_login_btns"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginBottom="16dp"/>-->
 
 
 </RelativeLayout>
